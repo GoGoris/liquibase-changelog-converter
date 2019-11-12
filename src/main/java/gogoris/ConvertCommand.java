@@ -31,7 +31,7 @@ public class ConvertCommand implements Callable<Void> {
         ResourceAccessor resourceAccessor = new FileSystemResourceAccessor();
         ChangeLogParser parser = null;
         try {
-            parser = ChangeLogParserFactory.getInstance().getParser(FilenameUtils.getExtension(input), resourceAccessor);
+            parser = ChangeLogParserFactory.getInstance().getParser(FilenameUtils.getName(input), resourceAccessor);
             DatabaseChangeLog changeLog = parser
                     .parse(input, new ChangeLogParameters(), resourceAccessor);
 
