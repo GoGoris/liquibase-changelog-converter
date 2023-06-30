@@ -4,8 +4,9 @@ import picocli.CommandLine;
 
 public class ConverterApp {
 
-    public static void main(String[] args) throws Exception {
-        CommandLine.call(new ConvertCommand(), args);
+    public static void main(String[] args) {
+        var cmd = new ConvertCommand();
+        new CommandLine(cmd).execute(args);
     }
 
 }
